@@ -1,7 +1,8 @@
 import { Fighter } from "../models/Fighter.model";
 
 export async function seed() {
-  if (Fighter.find() === null) {
+  const fColl = await Fighter.find();
+  if (fColl.length === 0) {
     await Fighter.deleteMany({});
 
     await Fighter.insertMany([

@@ -11,7 +11,7 @@ services:
         - USERNAME=$MONGO_INITDB_ROOT_USERNAME
         - PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
         - PORT_NUM=$PORT_NUM
-    working_dir: /mongo-basis
+    working_dir: /sf-fighter-api
     volumes: 
       - ./sf-fighter-api:/sf-fighter-api/
     depends_on:
