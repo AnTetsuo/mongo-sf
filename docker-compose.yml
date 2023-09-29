@@ -12,7 +12,6 @@ services:
         - PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
         - PORT_NUM=$PORT_NUM
     working_dir: /mongo-basis
-    # Caso queira que o container esteja atualizado durante o desenvolvimento, sem que você precise ficar fazendo down e up dos containers, descomente as 3 linhas abaixo
     volumes: 
       - ./sf-fighter-api:/sf-fighter-api/
     depends_on:
