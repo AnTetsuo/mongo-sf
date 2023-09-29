@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "setup": "cd sf-fighter-api && npm install && cd .. && docker compose up -d && docker logs sf-fighter-api -f"
+  }
+}

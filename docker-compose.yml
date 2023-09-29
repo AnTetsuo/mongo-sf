@@ -1,0 +1,29 @@
+version: '3.9'
+services:
+  backend:
+    container_name: sf-fighter-api
+    build: ./sf-fighter-api
+    ports:
+      - 3000:3000
+    environment:
+        - DB_NAME=$DB_NAME
+        - COLLECTION_NAME=$COLLECTION_NAME
+        - USERNAME=$MONGO_INITDB_ROOT_USERNAME
+        - PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+        - PORT_NUM=$PORT_NUM
+    working_dir: /mongo-basis
+    # Caso queira que o container esteja atualizado durante o desenvolvimento, sem que você precise ficar fazendo down e up dos containers, descomente as 3 linhas abaixo
+    volumes: 
+      - ./sf-fighter-api:/sf-fighter-api/
+    depends_on:
+      - db
+
+  db:
+      image: mongo
+      container_name: db
+      ports:
+        - 27017:$PORT_NUM
+      environment:
+        - MONGO_INITDB_ROOT_USERNAME=$MONGO_INITDB_ROOT_USERNAME
+        - MONGO_INITDB_ROOT_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
+      restart: 'always'
