@@ -2,6 +2,7 @@ interface commands {
   name: string,
   numPadNotation: string,
   type: "hold" | "motion",
+  airOk?: boolean,
 }
 
 export type uniqueAttacks = {

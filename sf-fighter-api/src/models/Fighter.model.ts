@@ -26,6 +26,7 @@ const superArtSchema = new Schema<superArt>(
     numPadNotation: { type: String, required: true},
     type: { type: String, required: true },
     cost: { type: Number, required: true },
+    airOk: { type: Boolean, required: false},
   }
 )
 
