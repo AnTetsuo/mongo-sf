@@ -1,4 +1,4 @@
-type errType = "INT_ERROR";
+type errType = "INT_ERROR" | "NOT_FOUND";
 
 export type errServ = {
   status: errType;
